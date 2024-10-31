@@ -15,6 +15,7 @@ $(document).ready(function () {
             success: function (data) {
                 let daySchedule = data.schedule.filter(classInfo => classInfo.days.includes(selectedDay)); // Fixed typo
                 console.log(daySchedule);
+
                 renderHTML(daySchedule);
 
             },
@@ -31,7 +32,6 @@ $(document).ready(function () {
             daySchedule.forEach(classInfo => {
                 htmlString += `<tr>
                     <td>${classInfo.period}</td>
-                    <td>${classInfo.timme}</td><!--fix-->
                     <td>${classInfo.class}</td>
                     <td>${classInfo.teacher}</td>
                     <td>${classInfo.room}</td>
